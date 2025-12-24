@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "CESI Auto-Login Ultimate",
+  "version": "2.1",
+  "description": "Connexion CESI",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://*.cesi.fr/*",
+    "https://*.viacesi.fr/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.cesi.fr/*", 
+        "https://*.viacesi.fr/*",
+        "https://login.microsoftonline.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "action": { "default_popup": "popup.html" }
+}
